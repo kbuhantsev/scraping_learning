@@ -37,6 +37,17 @@ html5lib = ["html5lib"]
 lxml = ["lxml"]
 
 [[package]]
+name = "by"
+version = "0.0.4"
+description = "selection tools"
+optional = false
+python-versions = "*"
+files = [
+    {file = "by-0.0.4-py3-none-any.whl", hash = "sha256:56aded08ee6a09c0838f2347aac6e2595b03fbb9c330c99b1c178e1a5056dc56"},
+    {file = "by-0.0.4.tar.gz", hash = "sha256:70ec16d7b9adbfd768bec5f3effc488251828d1c2fd3cbed53fc86b4c3933393"},
+]
+
+[[package]]
 name = "certifi"
 version = "2023.7.22"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -558,4 +569,4 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "fa956870de0deb5ca4c461316bae2a7e89572b0009361555442a25c7e521ade4"
+content-hash = "586ef00adc2863dccd1cebae80aa708657804b8b3e3d222452dded566e7da168"
