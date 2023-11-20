@@ -13,6 +13,7 @@ requests = "^2.31.0"
 selenium = "^4.15.2"
 webdriver-manager = "^4.0.1"
 by = "^0.0.4"
+mongoengine = "^0.27.0"
 
 
 [build-system]

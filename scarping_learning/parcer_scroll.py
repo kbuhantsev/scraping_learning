@@ -42,39 +42,52 @@ driver.quit()
 
 soup = BeautifulSoup(src, "lxml")
 
-list_of_articles = soup.find_all("article")
-for article in list_of_articles:
+cities_list = soup.find_all("a", class_="NavigationCitySelect-item")
+print(cities_list)
+result_array = []
+for link in cities_list:
+    # тут в href лежит geo= или нет его вообще
+    url = link.get("href")
+    if url.find("geo_id") == -1:
+        continue
 
-    print("ID: " + article.get("id"))
+    city_id = url[url.find("=")+1: url.find("&")]
+    city_name = link.find_next("span").text
+    print(f"{city_name} {city_id}")
 
-    picture = article.find_next("picture", class_="realty-preview__image").find_next("img").get("src")
-    print("картинка: ", picture)
-
-    description = article.find_next(class_="realty-preview__content-column")
-    # print(description)
-    price = (description.find_next("div", class_=["realty-preview-price", "realty-preview-price--main"]).
-             text.replace("\xa0", ""))
-    print(price)
-
-    address = (description.find_next("h3", class_="realty-preview-title").
-               find_next("a", class_="realty-preview-title__link")
-               .text)
-    print(address)
-
-    list_of_addresses = description.find_all("a", class_="realty-preview-sub-title")
-    result_addresses = ""
-    for item in list_of_addresses:
-        result_addresses += item.text + ", "
-    result_addresses = result_addresses[0:len(result_addresses)-2]
-    print(result_addresses)
-
-    description_text = description.find_next("p", class_="realty-preview-description__text").text
-    print(description_text)
-
-    properties = description.find_all(class_="realty-preview-properties-item")
-    for prop in properties:
-        value = prop.find_next("span").text
-        print(value)
-
-    break
+# list_of_articles = soup.find_all("article")
+# for article in list_of_articles:
+#
+#     print("ID: " + article.get("id"))
+#
+#     picture = article.find_next("picture", class_="realty-preview__image").find_next("img").get("src")
+#     print("картинка: ", picture)
+#
+#     description = article.find_next(class_="realty-preview__content-column")
+#     # print(description)
+#     price = (description.find_next("div", class_=["realty-preview-price", "realty-preview-price--main"]).
+#              text.replace("\xa0", ""))
+#     print(price)
+#
+#     address = (description.find_next("h3", class_="realty-preview-title").
+#                find_next("a", class_="realty-preview-title__link")
+#                .text)
+#     print(address)
+#
+#     list_of_addresses = description.find_all("a", class_="realty-preview-sub-title")
+#     result_addresses = ""
+#     for item in list_of_addresses:
+#         result_addresses += item.text + ", "
+#     result_addresses = result_addresses[0:len(result_addresses)-2]
+#     print(result_addresses)
+#
+#     description_text = description.find_next("p", class_="realty-preview-description__text").text
+#     print(description_text)
+#
+#     properties = description.find_all(class_="realty-preview-properties-item")
+#     for prop in properties:
+#         value = prop.find_next("span").text
+#         print(value)
+#
+#     break
 
