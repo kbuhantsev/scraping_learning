@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -11,7 +13,7 @@ from scarping_learning.models import City
 service = Service(ChromeDriverManager().install())
 
 options = webdriver.ChromeOptions()
-options.add_argument('headless')
+# options.add_argument('headless')
 driver = webdriver.Chrome(service=service, options=options)
 driver.maximize_window()
 
@@ -24,20 +26,23 @@ section_id=1&sort=insert_time&without_broker=owner")
 # section_id=4 - аренда домов
 
 
-driver.implicitly_wait(3)
+# driver.implicitly_wait(3)
 
 driver.get(url)
 
-page_height = driver.execute_script('return document.body.scrollHeight;')
-window_height = driver.execute_script("return window.screen.height;")
+time.sleep(5)
 
-total_height = 0
 
-while total_height < driver.execute_script('return document.body.scrollHeight;'):
-    driver.find_element(by=By.TAG_NAME, value='body').send_keys(Keys.PAGE_DOWN)
-    driver.implicitly_wait(1)
-
-    total_height += window_height
+# page_height = driver.execute_script("return document.body.scrollHeight;")
+# window_height = driver.execute_script("return window.screen.height;")
+#
+# total_height = 0
+#
+# while total_height < driver.execute_script('return document.body.scrollHeight;'):
+#     driver.find_element(by=By.TAG_NAME, value='body').send_keys(Keys.PAGE_DOWN)
+#     driver.implicitly_wait(1)
+#
+#     total_height += window_height
 
 src = driver.page_source
 
@@ -45,26 +50,42 @@ driver.quit()
 
 soup = BeautifulSoup(src, "lxml")
 
-cities_list = soup.find_all("a", class_="NavigationCitySelect-item")
-# print(cities_list)
-result_array = []
 
-db = get_connection()
-if db is None:
-    raise Exception("no connection")
+def fill_all_cities(soup_data: BeautifulSoup) -> None:
 
-for link in cities_list:
-    # тут в href лежит geo= или нет его вообще
-    url = link.get("href")
-    if url.find("geo_id") == -1:
-        continue
+    cities_list = soup_data.find_all("a", class_="NavigationCitySelect-item")
 
-    city_id = url[url.find("=")+1: url.find("&")]
-    city_name = link.find_next("span").text
-    print(f"{city_name} {city_id}")
+    db = get_connection()
+    if db is None:
+        raise Exception("no connection")
 
-    city = City(city_id=city_id, city_name=city_name).save()
+    for link in cities_list:
+        # тут в href лежит geo= или нет его вообще
+        url_local = link.get("href")
+        if url_local.find("geo_id") == -1:
+            continue
 
+        city_id = url_local[url_local.find("=")+1: url_local.find("&")]
+        city_name = link.find_next("span").text
+        print(f"{city_name} {city_id}")
+
+        City.objects(city_id=city_id).update_one(city_name=city_name,
+                                                 city_id=city_id,
+                                                 upsert=True)
+
+    last_cities = [{"city_id": "1", "city_name": "Київ"},
+                   {"city_id": "24", "city_name": "Львів"},
+                   {"city_id": "26", "city_name": "Одеса"},
+                   {"city_id": "16", "city_name": "Дніпро"},
+                   {"city_id": "31", "city_name": "Харків"}]
+
+    for obj in last_cities:
+        City.objects(city_id=obj["city_id"]).update_one(city_name=obj["city_name"],
+                                                        city_id=obj["city_id"],
+                                                        upsert=True)
+
+
+fill_all_cities(soup)
 
 # list_of_articles = soup.find_all("article")
 # for article in list_of_articles:
