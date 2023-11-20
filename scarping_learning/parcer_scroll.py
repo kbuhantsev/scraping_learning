@@ -5,6 +5,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 from selenium.webdriver import Keys
 
+from scarping_learning.connect_mongo import get_connection
+from scarping_learning.models import City
+
 service = Service(ChromeDriverManager().install())
 
 options = webdriver.ChromeOptions()
@@ -43,8 +46,13 @@ driver.quit()
 soup = BeautifulSoup(src, "lxml")
 
 cities_list = soup.find_all("a", class_="NavigationCitySelect-item")
-print(cities_list)
+# print(cities_list)
 result_array = []
+
+db = get_connection()
+if db is None:
+    raise Exception("no connection")
+
 for link in cities_list:
     # тут в href лежит geo= или нет его вообще
     url = link.get("href")
@@ -54,6 +62,9 @@ for link in cities_list:
     city_id = url[url.find("=")+1: url.find("&")]
     city_name = link.find_next("span").text
     print(f"{city_name} {city_id}")
+
+    city = City(city_id=city_id, city_name=city_name).save()
+
 
 # list_of_articles = soup.find_all("article")
 # for article in list_of_articles:

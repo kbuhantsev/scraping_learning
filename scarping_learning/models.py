@@ -1,5 +1,6 @@
 from datetime import datetime
 
+import mongoengine
 from mongoengine import Document
 from mongoengine.fields import StringField, IntField, DateTimeField, BooleanField, ReferenceField
 
@@ -20,7 +21,7 @@ class User(Document):
 
 
 class City(Document):
-    city_id = IntField(required=True)
+    city_id = StringField(required=True)
     city_name = StringField(required=True)
 
 
@@ -35,6 +36,6 @@ class Notice(Document):
 
 
 class Settings(Document):
-    user = ReferenceField(User, required=True)
-    city = ReferenceField(City, required=True)
+    user = ReferenceField(User, required=True, reverse_delete_rule=mongoengine.DO_NOTHING)
+    city = ReferenceField(City, required=True, reverse_delete_rule=mongoengine.DO_NOTHING)
     section = StringField(default="1", choices=SECTIONS)
