@@ -36,7 +36,12 @@ class Notice(Document):
     city = ReferenceField(City, required=True)
 
 
-class Settings(Document):
+class Setting(Document):
     user = ReferenceField(User, required=True, reverse_delete_rule=mongoengine.DO_NOTHING)
     city = ReferenceField(City, required=True, reverse_delete_rule=mongoengine.DO_NOTHING)
     section = StringField(default=1, choices=SECTIONS)
+
+
+class Section(Document):
+    section_id = IntField(required=True)
+    section_title = StringField(default="")
