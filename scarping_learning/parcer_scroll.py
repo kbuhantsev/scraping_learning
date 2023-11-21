@@ -43,13 +43,13 @@ driver.quit()
 
 soup = BeautifulSoup(src, "lxml")
 
+db = get_connection()
+if db is None:
+    raise Exception("no connection")
+
 
 def fill_all_cities(soup_data: BeautifulSoup) -> None:
     cities_list = soup_data.find_all("a", class_="NavigationCitySelect-item")
-
-    db = get_connection()
-    if db is None:
-        raise Exception("no connection")
 
     for link in cities_list:
         # тут в href лежит geo= или нет его вообще
@@ -78,10 +78,6 @@ def fill_all_cities(soup_data: BeautifulSoup) -> None:
 
 
 # fill_all_cities(soup)
-
-db = get_connection()
-if db is None:
-    raise Exception("no connection")
 
 list_of_articles = soup.find_all("article")
 for article in list_of_articles:
