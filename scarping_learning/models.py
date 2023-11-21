@@ -4,10 +4,10 @@ import mongoengine
 from mongoengine import Document
 from mongoengine.fields import StringField, IntField, DateTimeField, BooleanField, ReferenceField
 
-SECTIONS = (("1", "Квартири"),
-            ("2", "Аренда квартир"),
-            ("3", "Дома"),
-            ("4", "Аренда домiв"))
+SECTIONS = ((1, "Квартири"),
+            (2, "Аренда квартир"),
+            (3, "Дома"),
+            (4, "Аренда домiв"))
 
 
 class User(Document):
@@ -21,7 +21,7 @@ class User(Document):
 
 
 class City(Document):
-    city_id = StringField(required=True)
+    city_id = IntField(required=True)
     city_name = StringField(required=True)
 
 
@@ -29,13 +29,14 @@ class Notice(Document):
     notice_id = IntField(required=True)
     image_url = StringField(default=None)
     description = StringField(default=None)
-    price = StringField(default=None)
+    price = IntField(default=None)
     address = StringField(default=None)
     full_address = StringField(default=None)
     properties = StringField(default=None)
+    city = ReferenceField(City, required=True)
 
 
 class Settings(Document):
     user = ReferenceField(User, required=True, reverse_delete_rule=mongoengine.DO_NOTHING)
     city = ReferenceField(City, required=True, reverse_delete_rule=mongoengine.DO_NOTHING)
-    section = StringField(default="1", choices=SECTIONS)
+    section = StringField(default=1, choices=SECTIONS)
