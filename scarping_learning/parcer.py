@@ -23,14 +23,7 @@ def get_page_soup(geo_id: int, section_id: int, page: int = 1) -> BeautifulSoup:
     driver = webdriver.Chrome(service=service, options=options)
     driver.maximize_window()
 
-    url = f"https://market.lun.ua/uk/search?currency=USD\
-            &geo_id={geo_id}\
-            &is_without_fee=false\
-            &page={page}\
-            &price_sqm_currency=USD\
-            &section_id={section_id}\
-            &sort=insert_time\
-            &without_broker=owner"
+    url = f"https://market.lun.ua/uk/search?currency=USD&geo_id={geo_id}&is_without_fee=false&page={page}&price_sqm_currency=USD&section_id={section_id}&sort=insert_time&without_broker=owner"
 
     driver.get(url)
     time.sleep(2)
@@ -82,15 +75,16 @@ def fill_all_cities(soup: BeautifulSoup) -> None:
                                                         upsert=True)
 
 
-def handle_notices(soup: BeautifulSoup) -> None:
+def handle_notices(soup: BeautifulSoup, city_id: int) -> None:
     list_of_articles = soup.find_all("article")
     for article in list_of_articles:
 
         article_id = article.get("id")
 
-        picture = article.find_next("picture", class_="realty-preview__image").find_next("img").get("src")
-        if not picture:
+        picture_preview = article.find_next("picture", class_="realty-preview__image")
+        if not picture_preview:
             continue
+        picture = picture_preview.find_next("img").get("src")
 
         description = article.find_next(class_="realty-preview__content-column")
         if not description:
@@ -111,14 +105,14 @@ def handle_notices(soup: BeautifulSoup) -> None:
                       for prop in description.find_all(class_="realty-preview-properties-item")}
         props_text = "; ".join(properties)
 
-        city = City.objects(city_id="26")[0]
+        city = City.objects(city_id=city_id)[0]
 
-        Notice.objects(notice_id=article_id).update_one(notice_id=article_id,
-                                                        image_url=picture,
-                                                        description=description_text,
-                                                        price=int(price.split(" ")[0]),
-                                                        address=address,
-                                                        full_address=result_addresses,
-                                                        properties=props_text,
-                                                        city=city,
-                                                        upsert=True)
+        if not len(Notice.objects(notice_id=article_id)):
+            Notice(notice_id=article_id,
+                   image_url=picture,
+                   description=description_text,
+                   price=int(price.split(" ")[0]),
+                   address=address,
+                   full_address=result_addresses,
+                   properties=props_text,
+                   city=city).save()
