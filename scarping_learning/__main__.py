@@ -1,24 +1,30 @@
 import logging
 import sys
+from concurrent.futures import ThreadPoolExecutor
 
 from scarping_learning.models import City, Section
 from scarping_learning.parcer import get_page_soup, handle_notices
+import asyncio
 
 
-def start():
+async def start():
 
     sections = Section.objects()
 
-    for section in sections:
-        for city in City.objects:
-            try:
-                soup = get_page_soup(geo_id=city.city_id, section_id=section.section_id)
-            except Exception as error:
-                print(error)
-                continue
+    loop = asyncio.get_running_loop()
 
-            handle_notices(soup=soup, city_id=city.city_id)
-            # break
+    for section in sections:
+
+        with ThreadPoolExecutor(4) as pool:
+
+            soups = []
+            for city in City.objects:
+                soups.append(loop.run_in_executor(pool, get_page_soup, city.city_id, section.section_id))
+
+            result = await asyncio.gather(*soups, return_exceptions=True)
+
+        for i in range(0, len(result) - 1):
+            handle_notices(result[i], City.objects[i].city_id)
 
         break
 
@@ -33,4 +39,4 @@ if __name__ == "__main__":
         ],
     )
 
-    start()
+    asyncio.run(start())

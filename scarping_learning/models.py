@@ -10,7 +10,7 @@ class User(Document):
     user_name = StringField(default=None)
     first_name = StringField(default=None)
     last_name = StringField(default=None)
-    join_date = DateTimeField(default=datetime.utcnow)
+    join_date = DateTimeField(default=datetime.now)
     is_admin = BooleanField(default=False)
     is_activated = BooleanField(default=False)
 

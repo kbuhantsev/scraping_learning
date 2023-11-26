@@ -1,3 +1,5 @@
+from datetime import datetime
+import logging
 import time
 
 from selenium import webdriver
@@ -50,7 +52,6 @@ def fill_all_cities(soup: BeautifulSoup) -> None:
     cities_list = soup.find_all("a", class_="NavigationCitySelect-item")
 
     for link in cities_list:
-        # тут в href лежит geo= или нет его вообще
         url_local = link.get("href")
         if url_local.find("geo_id") == -1:
             continue
@@ -115,4 +116,6 @@ def handle_notices(soup: BeautifulSoup, city_id: int) -> None:
                    address=address,
                    full_address=result_addresses,
                    properties=props_text,
-                   city=city).save()
+                   city=city,
+                   creation_date=datetime.now()).save()
+            logging.info(f"added notice: {article_id} {city.city_name} {result_addresses}")
