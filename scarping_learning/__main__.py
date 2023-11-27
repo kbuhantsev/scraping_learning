@@ -15,7 +15,7 @@ async def start():
 
     for section in sections:
 
-        with ThreadPoolExecutor(4) as pool:
+        with ThreadPoolExecutor(3) as pool:
 
             soups = []
             for city in City.objects:
@@ -23,8 +23,8 @@ async def start():
 
             result = await asyncio.gather(*soups, return_exceptions=True)
 
-        for i in range(0, len(result) - 1):
-            handle_notices(result[i], City.objects[i].city_id)
+        for idx, soup in enumerate(result):
+            handle_notices(soup, City.objects[idx].city_id)
 
         break
 

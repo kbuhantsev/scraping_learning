@@ -25,7 +25,8 @@ def get_page_soup(geo_id: int, section_id: int, page: int = 1) -> BeautifulSoup:
     driver = webdriver.Chrome(service=service, options=options)
     driver.maximize_window()
 
-    url = f"https://market.lun.ua/uk/search?currency=USD&geo_id={geo_id}&is_without_fee=false&page={page}&price_sqm_currency=USD&section_id={section_id}&sort=insert_time&without_broker=owner"
+    url = f"https://market.lun.ua/uk/search?currency=USD&geo_id={geo_id}&is_without_fee=false&page={page}\
+    &price_sqm_currency=USD&section_id={section_id}&sort=insert_time&without_broker=owner"
 
     driver.get(url)
     time.sleep(2)
@@ -77,6 +78,11 @@ def fill_all_cities(soup: BeautifulSoup) -> None:
 
 
 def handle_notices(soup: BeautifulSoup, city_id: int) -> None:
+
+    if not isinstance(soup, BeautifulSoup):
+        print(soup)
+        return
+
     list_of_articles = soup.find_all("article")
     for article in list_of_articles:
 
