@@ -2,7 +2,13 @@ from datetime import datetime
 
 import mongoengine
 from mongoengine import Document
-from mongoengine.fields import StringField, IntField, DateTimeField, BooleanField, ReferenceField
+from mongoengine.fields import (
+    StringField,
+    IntField,
+    DateTimeField,
+    BooleanField,
+    ReferenceField,
+)
 
 
 class User(Document):
@@ -38,9 +44,12 @@ class Section(Document):
 
 
 class Setting(Document):
-    user = ReferenceField(User, required=True, reverse_delete_rule=mongoengine.DO_NOTHING)
-    city = ReferenceField(City, required=True, reverse_delete_rule=mongoengine.DO_NOTHING)
-    section = ReferenceField(Section, required=True, reverse_delete_rule=mongoengine.DO_NOTHING)
-
-
-
+    user = ReferenceField(
+        User, required=True, reverse_delete_rule=mongoengine.DO_NOTHING
+    )
+    city = ReferenceField(
+        City, required=True, reverse_delete_rule=mongoengine.DO_NOTHING
+    )
+    section = ReferenceField(
+        Section, required=True, reverse_delete_rule=mongoengine.DO_NOTHING
+    )
