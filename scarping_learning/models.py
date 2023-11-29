@@ -29,6 +29,7 @@ class City(Document):
 class Notice(Document):
     notice_id = IntField(required=True)
     image_url = StringField(default=None)
+    notice_url = StringField(default=None)
     description = StringField(default=None)
     price = IntField(default=None)
     address = StringField(default=None)

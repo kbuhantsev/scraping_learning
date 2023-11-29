@@ -101,11 +101,14 @@ def handle_notices(soup: BeautifulSoup, city_id: int) -> None:
             "div", class_=["realty-preview-price", "realty-preview-price--main"]
         ).text.replace("\xa0", "")
 
-        address = (
-            description.find_next("h3", class_="realty-preview-title")
-            .find_next("a", class_="realty-preview-title__link")
-            .text
-        )
+        preview_title = description.find_next(
+            "h3", class_="realty-preview-title"
+        ).find_next("a", class_="realty-preview-title__link")
+        address = preview_title.text
+        notice_url = preview_title.get("href")
+
+        if notice_url[:3] == "/uk":
+            notice_url = "https://market.lun.ua" + notice_url
 
         list_of_addresses = [
             item.text
@@ -129,6 +132,7 @@ def handle_notices(soup: BeautifulSoup, city_id: int) -> None:
             Notice(
                 notice_id=article_id,
                 image_url=picture,
+                notice_url=notice_url,
                 description=description_text,
                 price=int(price.split(" ")[0]),
                 address=address,
