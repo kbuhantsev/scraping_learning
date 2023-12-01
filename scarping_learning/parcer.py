@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 from selenium.webdriver import Keys
 
 from scarping_learning.connect_mongo import get_connection
-from scarping_learning.models import City, Notice
+from scarping_learning.models import City, Notice, Section
 
 db = get_connection()
 if db is None:
@@ -79,9 +79,9 @@ def fill_all_cities(soup: BeautifulSoup) -> None:
         )
 
 
-def handle_notices(soup: BeautifulSoup, city_id: int) -> None:
+def handle_notices(soup: BeautifulSoup, city_id: int, section: Section) -> None:
     if not isinstance(soup, BeautifulSoup):
-        print(soup)
+        logging.error(f"Can't handle soup. {city_id} {section.section_title}")
         return
 
     list_of_articles = soup.find_all("article")
@@ -130,6 +130,8 @@ def handle_notices(soup: BeautifulSoup, city_id: int) -> None:
 
         if not len(Notice.objects(notice_id=article_id)):
             Notice(
+                city=city,
+                section=section,
                 notice_id=article_id,
                 image_url=picture,
                 notice_url=notice_url,
@@ -138,9 +140,8 @@ def handle_notices(soup: BeautifulSoup, city_id: int) -> None:
                 address=address,
                 full_address=result_addresses,
                 properties=props_text,
-                city=city,
                 creation_date=datetime.now(),
             ).save()
             logging.info(
-                f"added notice: {article_id} {city.city_name} {result_addresses}"
+                f"added notice: {section.section_title} {article_id} {city.city_name} {result_addresses}"
             )

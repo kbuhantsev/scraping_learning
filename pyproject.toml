@@ -14,6 +14,7 @@ selenium = "^4.15.2"
 webdriver-manager = "^4.0.1"
 by = "^0.0.4"
 mongoengine = "^0.27.0"
+aiohttp = "^3.9.1"
 
 
 [build-system]

@@ -8,6 +8,7 @@ from mongoengine.fields import (
     DateTimeField,
     BooleanField,
     ReferenceField,
+    DictField,
 )
 
 
@@ -26,22 +27,32 @@ class City(Document):
     city_name = StringField(required=True)
 
 
-class Notice(Document):
-    notice_id = IntField(required=True)
-    image_url = StringField(default=None)
-    notice_url = StringField(default=None)
-    description = StringField(default=None)
-    price = IntField(default=None)
-    address = StringField(default=None)
-    full_address = StringField(default=None)
-    properties = StringField(default=None)
-    city = ReferenceField(City, required=True)
-    creation_date = DateTimeField(default=datetime.utcnow)
-
-
 class Section(Document):
     section_id = IntField(required=True)
     section_title = StringField(default="")
+
+
+class Notice(Document):
+    city_id = IntField(required=True)
+    section_id = IntField(required=True)
+    notice_id = IntField(required=True)
+    notice_data = DictField(required=True)
+    notice_url = StringField(default=None)
+    creation_date = DateTimeField(default=datetime.utcnow)
+    sent_out = BooleanField(default=False)
+
+
+# class Notice(Document):
+#     notice_id = IntField(required=True)
+#     image_url = StringField(default=None)
+#     notice_url = StringField(default=None)
+#     description = StringField(default=None)
+#     price = IntField(default=None)
+#     address = StringField(default=None)
+#     full_address = StringField(default=None)
+#     properties = StringField(default=None)
+#     city = ReferenceField(City, required=True)
+#     creation_date = DateTimeField(default=datetime.utcnow)
 
 
 class Setting(Document):
