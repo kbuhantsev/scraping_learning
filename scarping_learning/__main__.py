@@ -83,7 +83,7 @@ async def save_notices() -> None:
                                 notice_id=notice_id,
                                 notice_data=notice,
                                 notice_url=f"https://market.lun.ua/uk/redirect/{notice_id}",
-                                creation_date=datetime.fromisoformat(notice["insert_time"]),
+                                creation_date=datetime.fromisoformat(notice["download_time"]),
                             ).save()
                             logging.info(
                                 f"added notice: {section.section_title} {notice_id} {city.city_name} {notice['geo']}"
