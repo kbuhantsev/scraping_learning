@@ -1,13 +1,14 @@
 import logging
-from typing import Union
+from typing import Any, Union
 
-from mongoengine import connect, ConnectionFailure, connection
+from mongoengine import connect, ConnectionFailure
 
 
-def get_connection() -> Union[connection, None]:
+def get_connection() -> Union[Any, None]:
     try:
         return connect(
-            host="mongodb+srv://kbuhantsev:masterkey@database.6eflooc.mongodb.net/database?retryWrites=true&w=majority",
+            host=("mongodb+srv://kbuhantsev:masterkey@database.6eflooc.mongodb.net/",
+                  "database?retryWrites=true&w=majority"),
             ssl=True,
         )
     except ConnectionFailure as error:

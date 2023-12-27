@@ -1,22 +1,24 @@
 from datetime import datetime
 import logging
 import sys
+from typing import Any
 from concurrent.futures import ThreadPoolExecutor
 
+import asyncio
 import aiohttp
 
 from scarping_learning.connect_mongo import get_connection
 from scarping_learning.models import City, Section, Notice
 from scarping_learning.parcer import get_page_soup, handle_notices
-import asyncio
 
 
-db = get_connection()
+
+db: Any | None = get_connection()
 if db is None:
-    raise Exception("no connection to mongo db!")
+    raise ConnectionError("no connection to mongo db!")
 
 
-async def start():
+async def start() -> None:
     sections = Section.objects()
 
     loop = asyncio.get_running_loop()
@@ -39,8 +41,7 @@ async def start():
         break
 
 
-async def main():
-    # await save_cities()
+async def main() -> None:
     await save_notices()
 
 
@@ -75,7 +76,7 @@ async def save_notices() -> None:
                 async with session.get("/api/realties", params=params) as resp:
                     notices_data = await resp.json()
                     for notice in notices_data["data"]:
-                        if not len(Notice.objects(notice_id=notice["id"])):
+                        if len(Notice.objects(notice_id=notice["id"])) == 0:
                             notice_id = notice["id"]
                             Notice(
                                 city_id=city.city_id,
@@ -83,10 +84,16 @@ async def save_notices() -> None:
                                 notice_id=notice_id,
                                 notice_data=notice,
                                 notice_url=f"https://market.lun.ua/uk/redirect/{notice_id}",
-                                creation_date=datetime.fromisoformat(notice["download_time"]),
+                                creation_date=datetime.fromisoformat(
+                                    notice["download_time"]
+                                ),
                             ).save()
                             logging.info(
-                                f"added notice: {section.section_title} {notice_id} {city.city_name} {notice['geo']}"
+                                "added notice: %s %s %s %s",
+                                section.section_title,
+                                notice_id,
+                                city.city_name,
+                                notice["geo"],
                             )
 
 
