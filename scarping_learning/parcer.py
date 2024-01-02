@@ -2,31 +2,34 @@ from datetime import datetime
 import logging
 import time
 
-from selenium import webdriver
+from selenium.webdriver import Keys, ChromeOptions, Chrome
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
-from selenium.webdriver import Keys
 
 from scarping_learning.connect_mongo import get_connection
 from scarping_learning.models import City, Notice, Section
 
 db = get_connection()
 if db is None:
-    raise Exception("no connection to mongo db!")
+    raise ConnectionError("no connection to mongo db!")
 
 
 def get_page_soup(geo_id: int, section_id: int, page: int = 1) -> BeautifulSoup:
     service = Service(ChromeDriverManager().install())
 
-    options = webdriver.ChromeOptions()
+    options = ChromeOptions()
     options.add_argument("headless")
-    driver = webdriver.Chrome(service=service, options=options)
+    driver = Chrome(service=service, options=options)
     driver.maximize_window()
 
-    url = f"https://market.lun.ua/uk/search?currency=USD&geo_id={geo_id}&is_without_fee=false&page={page}\
-    &price_sqm_currency=USD&section_id={section_id}&sort=insert_time&without_broker=owner"
+    url = (
+        f"https://market.lun.ua/uk/search?currency=USD"
+        f"&geo_id={geo_id}&is_without_fee=false&page={page}"
+        f"&price_sqm_currency=USD&section_id={section_id}"
+        f"&sort=insert_time&without_broker=owner"
+    )
 
     driver.get(url)
     time.sleep(2)
@@ -81,7 +84,7 @@ def fill_all_cities(soup: BeautifulSoup) -> None:
 
 def handle_notices(soup: BeautifulSoup, city_id: int, section: Section) -> None:
     if not isinstance(soup, BeautifulSoup):
-        logging.error(f"Can't handle soup. {city_id} {section.section_title}")
+        logging.error("Can't handle soup. %s %s", city_id, section.section_title)
         return
 
     list_of_articles = soup.find_all("article")
@@ -128,7 +131,7 @@ def handle_notices(soup: BeautifulSoup, city_id: int, section: Section) -> None:
 
         city = City.objects(city_id=city_id)[0]
 
-        if not len(Notice.objects(notice_id=article_id)):
+        if len(Notice.objects(notice_id=article_id)) == 0:
             Notice(
                 city=city,
                 section=section,
@@ -143,5 +146,9 @@ def handle_notices(soup: BeautifulSoup, city_id: int, section: Section) -> None:
                 creation_date=datetime.now(),
             ).save()
             logging.info(
-                f"added notice: {section.section_title} {article_id} {city.city_name} {result_addresses}"
+                "added notice: %s %s %s %s",
+                section.section_title,
+                article_id,
+                city.city_name,
+                result_addresses,
             )
