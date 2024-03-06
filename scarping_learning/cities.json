@@ -1,0 +1,1102 @@
+[
+    {
+        "text": "місто Київ, Київська область",
+        "label": "Київ",
+        "cityName": "Київ",
+        "stateName": "Київська",
+        "output": "місто Київ, Київська область",
+        "payload": {
+            "stateId": 10,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 10
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Київ, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Київська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Вінниця, Вінницька область",
+        "label": "Вінниця",
+        "cityName": "Вінниця",
+        "stateName": "Вінницька",
+        "output": "місто Вінниця, Вінницька область",
+        "payload": {
+            "stateId": 1,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 1
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Вінниця, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Вінницька ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Одеса, Одеська область",
+        "label": "Одеса",
+        "cityName": "Одеса",
+        "stateName": "Одеська",
+        "output": "місто Одеса, Одеська область",
+        "payload": {
+            "stateId": 12,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 12
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Одеса, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Одеська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Дніпро, Дніпропетровська область",
+        "label": "Дніпро",
+        "cityName": "Дніпро",
+        "stateName": "Дніпропетровська",
+        "output": "місто Дніпро, Дніпропетровська область",
+        "payload": {
+            "stateId": 11,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 11
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Дніпро, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Дніпропетровська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Львів, Львівська область",
+        "label": "Львів",
+        "cityName": "Львів",
+        "stateName": "Львівська",
+        "output": "місто Львів, Львівська область",
+        "payload": {
+            "stateId": 5,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 5
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Львів, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Львівська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Хмельницький, Хмельницька область",
+        "label": "Хмельницький",
+        "cityName": "Хмельницький",
+        "stateName": "Хмельницька",
+        "output": "місто Хмельницький, Хмельницька область",
+        "payload": {
+            "stateId": 4,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 4
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Хмельницький, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Хмельницька ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Тернопіль, Тернопільська область",
+        "label": "Тернопіль",
+        "cityName": "Тернопіль",
+        "stateName": "Тернопільська",
+        "output": "місто Тернопіль, Тернопільська область",
+        "payload": {
+            "stateId": 3,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 3
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Тернопіль, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Тернопільська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Харків, Харківська область",
+        "label": "Харків",
+        "cityName": "Харків",
+        "stateName": "Харківська",
+        "output": "місто Харків, Харківська область",
+        "payload": {
+            "stateId": 7,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 7
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Харків, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Харківська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Миколаїв, Миколаївська область",
+        "label": "Миколаїв",
+        "cityName": "Миколаїв",
+        "stateName": "Миколаївська",
+        "output": "місто Миколаїв, Миколаївська область",
+        "payload": {
+            "stateId": 19,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 19
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Миколаїв, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Миколаївська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Житомир, Житомирська область",
+        "label": "Житомир",
+        "cityName": "Житомир",
+        "stateName": "Житомирська",
+        "output": "місто Житомир, Житомирська область",
+        "payload": {
+            "stateId": 2,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 2
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Житомир, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Житомирська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Запоріжжя, Запорізька область",
+        "label": "Запоріжжя",
+        "cityName": "Запоріжжя",
+        "stateName": "Запорізька",
+        "output": "місто Запоріжжя, Запорізька область",
+        "payload": {
+            "stateId": 14,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 14
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Запоріжжя, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Запорізька ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Рівне, Рівненська область",
+        "label": "Рівне",
+        "cityName": "Рівне",
+        "stateName": "Рівненська",
+        "output": "місто Рівне, Рівненська область",
+        "payload": {
+            "stateId": 9,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 9
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Рівне, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Рівненська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Ужгород, Закарпатська область",
+        "label": "Ужгород",
+        "cityName": "Ужгород",
+        "stateName": "Закарпатська",
+        "output": "місто Ужгород, Закарпатська область",
+        "payload": {
+            "stateId": 22,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 22
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Ужгород, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Закарпатська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Івано-Франківськ, Івано-Франківська область",
+        "label": "Івано-Франківськ",
+        "cityName": "Івано-Франківськ",
+        "stateName": "Івано-Франківська",
+        "output": "місто Івано-Франківськ, Івано-Франківська область",
+        "payload": {
+            "stateId": 15,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 15
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Івано-Франківськ, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Івано-Франківська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Черкаси, Черкаська область",
+        "label": "Черкаси",
+        "cityName": "Черкаси",
+        "stateName": "Черкаська",
+        "output": "місто Черкаси, Черкаська область",
+        "payload": {
+            "stateId": 24,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 24
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Черкаси, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Черкаська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Чернівці, Чернівецька область",
+        "label": "Чернівці",
+        "cityName": "Чернівці",
+        "stateName": "Чернівецька",
+        "output": "місто Чернівці, Чернівецька область",
+        "payload": {
+            "stateId": 25,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 25
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Чернівці, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Чернівецька ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Луцьк, Волинська область",
+        "label": "Луцьк",
+        "cityName": "Луцьк",
+        "stateName": "Волинська",
+        "output": "місто Луцьк, Волинська область",
+        "payload": {
+            "stateId": 18,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 18
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Луцьк, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Волинська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Херсон, Херсонська область",
+        "label": "Херсон",
+        "cityName": "Херсон",
+        "stateName": "Херсонська",
+        "output": "місто Херсон, Херсонська область",
+        "payload": {
+            "stateId": 23,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 23
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Херсон, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Херсонська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Полтава, Полтавська область",
+        "label": "Полтава",
+        "cityName": "Полтава",
+        "stateName": "Полтавська",
+        "output": "місто Полтава, Полтавська область",
+        "payload": {
+            "stateId": 20,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 20
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Полтава, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Полтавська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Чернігів, Чернігівська область",
+        "label": "Чернігів",
+        "cityName": "Чернігів",
+        "stateName": "Чернігівська",
+        "output": "місто Чернігів, Чернігівська область",
+        "payload": {
+            "stateId": 6,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 6
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Чернігів, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Чернігівська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Суми, Сумська область",
+        "label": "Суми",
+        "cityName": "Суми",
+        "stateName": "Сумська",
+        "output": "місто Суми, Сумська область",
+        "payload": {
+            "stateId": 8,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 8
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Суми, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Сумська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    },
+    {
+        "text": "місто Кропивницький, Кіровоградська область",
+        "label": "Кропивницький",
+        "cityName": "Кропивницький",
+        "stateName": "Кіровоградська",
+        "output": "місто Кропивницький, Кіровоградська область",
+        "payload": {
+            "stateId": 16,
+            "langId": 4,
+            "kind": "city",
+            "adminType": 1,
+            "id": 16
+        },
+        "langId": 4,
+        "nameTranslit": "",
+        "boldified": [
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "місто ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Кропивницький, ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "Кіровоградська ",
+                "isBold": false
+            },
+            {
+                "txt": "",
+                "isBold": true
+            },
+            {
+                "txt": "область ",
+                "isBold": false
+            }
+        ]
+    }
+]
