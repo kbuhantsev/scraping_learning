@@ -21,6 +21,7 @@ fake-useragent = "^1.4.0"
 selenium-wire = "^5.1.0"
 undetected-chromedriver = "^3.5.5"
 2captcha-python = "^1.2.2"
+selenium-stealth = "^1.0.6"
 
 
 [build-system]
