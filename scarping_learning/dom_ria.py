@@ -3,8 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-from selenium import webdriver
+# from selenium import webdriver
+from seleniumwire import webdriver
 from fake_useragent import UserAgent
+import seleniumwire.undetected_chromedriver as uc
 
 
 def main():
@@ -12,17 +14,18 @@ def main():
 
     user_agent = UserAgent()
 
-    service = Service(ChromeDriverManager().install())
-
     options = webdriver.ChromeOptions()
-    options.add_argument("start-maximized")
+    # options.add_argument("start-maximized")
     # options.add_argument("--ignore-certificate-errors")
     # options.add_argument("--incognito")
     options.add_argument("--headless")
     # options.add_argument(f"--proxy-server=5.189.158.162:3128")
     options.add_argument(f"user-agent={user_agent.random}")
 
-    driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(
+        options=options,
+        seleniumwire_options={"disable_capture": True, "request_storage": "memory"},
+    )
 
     driver.get(url)
     driver.implicitly_wait(0.5)
