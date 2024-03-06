@@ -1,5 +1,6 @@
 # from selenium import webdriver
 import json
+from pprint import pprint
 
 from selenium_stealth import stealth
 from fake_useragent import UserAgent
@@ -13,8 +14,8 @@ import gzip
 def my_response_interceptor(request, response):
     if request.url.startswith("https://dom.ria.com/realty/data/"):
         # print(request.url, response.body.decode("utf-8"))
-        body = gzip.decompress(response.body)
-        print(body.decode("utf-8"))
+        body = json.loads(gzip.decompress(response.body).decode("utf-8"))
+        pprint(body)
 
 
 def get_page_soup():

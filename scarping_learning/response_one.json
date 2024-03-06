@@ -1,0 +1,140 @@
+//https://cdn.riastatic.com/photos/dom/photo/26222/2622291/262229100/262229100f.jpg
+//https://dom.ria.com/uk/realty-prodaja-kvartira-kiev-podolskiy-lekanda-leya-lia-26545748.html
+
+{
+ "add_form_version": 2,
+ "advert_publish_type": 1,
+ "advert_title": 1,
+ "advert_type_id": 1,
+ "advert_type_name": "продажа",
+ "advert_type_name_uk": "продаж",
+ "agencyVerified": "False",
+ "beautiful_url": "realty-prodaja-kvartira-odessa-razumovskaya-ulitsa-30864751.html",
+ "building_entity_id": "62dee0f991ce0e1d77e7e060",
+ "building_number_for_map": "49",
+ "building_number_str": "49",
+ "call_price": 0,
+ "characteristics_values": {},
+ "city_id": 12,
+ "city_name": "Одесса",
+ "city_name_uk": "Одеса",
+ "complete_time": 465.606,
+ "currency_type": "$",
+ "currency_type_id": 1,
+ "currency_type_uk": "$",
+ "description": "",
+ "description_uk": "Уютная однушка на Разумовского \n\n"
+                   Продается небольшая уютная квартира рядом с центром.\n
+                   Общая площадь - 24 кв.м., комната  12 кв.м., кухня - 8
+                   кв.м..\n
+                   Все обустроено  заходи и живи! \n
+                   "\n"
+                   "В квартире есть вся необходимая мебель: кухня, шкаф, "
+                   "диван-кровать, а также техника: стиральная машина, плита, "
+                   "холодильник, микроволновая печь и т.д. Установлен немецкий "
+                   "газовый котел Viessmann. Вы сами регулируете обогрев "
+                   "(отопление дешевле в 2 раза).\n"
+                   "\n"
+                   "Одноэтажная квартира в классическом одесском дворике. Свой "
+                   "вход, нет соседей сверху, двор. Через забор находится "
+                   "охраняемая автостоянка.\n"
+                   "\n"
+                   "Адрес: Разумовская 49. Отличная транспортная развязка  15 "
+                   "минут до центра, рядом магазины, инфраструктура, через "
+                   "дорогу Макдональдс!\n"
+                   "\n"
+                   "Предложение от хозяина. Вы не платите комиссию "
+                   "агентствам.\n"
+                   "Звоните  отправим видео обзор, приходите  смотрите!",
+ "district_id": 0,
+ "floor": 1,
+ "floors_count": 2,
+ "isBinotel": 0,
+ "isNotepad": "False",
+ "is_calltracking": 0,
+ "is_commercial": 0,
+ "is_developer": 0,
+ "is_exclusive": 0,
+ "is_show_building_no": 1,
+ "latitude": 46.47481896,
+ "levels": 32,
+ "levels_expired": "2024-03-13 14:52:13",
+ "levels_expired_ts": 1710334333,
+ "location": "46.47481896,30.70978601",
+ "longitude": 30.70978601,
+ "main_photo": "dom/photo/28658/2865830/286583034/286583034.jpg",
+ "moderation_date_ts": 1709733866,
+ "osm_building_id": 160671404,
+ "partner_id": 2,
+ "photos": {"286582166": {"file": "dom/photo/28658/2865821/286582166/286582166.jpg",
+                          "id": 286582166,
+                          "ordering": 4,
+                          "parent_photo_id": 286582166},
+            "286582167": {"file": "dom/photo/28658/2865821/286582167/286582167.jpg",
+                          "id": 286582167,
+                          "ordering": 5,
+                          "parent_photo_id": 286582167},
+            "286582951": {"file": "dom/photo/28658/2865829/286582951/286582951.jpg",
+                          "id": 286582951,
+                          "ordering": 3,
+                          "parent_photo_id": 286582951},
+            "286583034": {"file": "dom/photo/28658/2865830/286583034/286583034.jpg",
+                          "id": 286583034,
+                          "ordering": 1,
+                          "parent_photo_id": 286583034},
+            "286583038": {"file": "dom/photo/28658/2865830/286583038/286583038.jpg",
+                          "id": 286583038,
+                          "ordering": 2,
+                          "parent_photo_id": 286583038}},
+ "photos_count": 5,
+ "price": 25500,
+ "priceArr": {"1": "25 500", "2": "23 380", "3": "984 300"},
+ "priceItemArr": {"1": 1063, "2": 975, "3": 41032},
+ "price_item": 1063,
+ "price_total": 25500,
+ "price_type": "за объект",
+ "price_type_uk": "за об"єкт",
+ "publishing_date": "2024-03-06 14:50:52",
+ "publishing_date_info": " Опубліковано 5 годин тому",
+ "publishing_date_ts": 1709729452,
+ "quadrants": {"zoom_10": "599_362",
+               "zoom_11": "1198_724",
+               "zoom_12": "2397_1449",
+               "zoom_13": "4794_2898",
+               "zoom_14": "9589_5797",
+               "zoom_15": "19179_11595",
+               "zoom_16": "38358_23190",
+               "zoom_17": "76717_46380",
+               "zoom_18": "153434_92760",
+               "zoom_6": "37_22",
+               "zoom_7": "74_45",
+               "zoom_8": "149_90",
+               "zoom_9": "299_181"},
+ "quality": 61,
+ "rangeFactorTopQuality": 611709729391,
+ "realtorVerified": "False",
+ "realty_id": 30864751,
+ "realty_sale_type": 1,
+ "realty_type_id": 2,
+ "realty_type_name": "Квартира",
+ "realty_type_name_uk": "Квартира",
+ "realty_type_parent_id": 1,
+ "realty_type_parent_name": "Жилье",
+ "realty_type_parent_name_uk": "Житло",
+ "rooms_count": 1,
+ "secondaryUtp": ["Вигідна ціна", "Оперативний показ", "У центрі"],
+ "show_on_map": 1,
+ "state_id": 12,
+ "state_name": "Одесская",
+ "state_name_uk": "Одеська",
+ "street_id": 3984,
+ "street_name": "Разумовская улица",
+ "street_name_uk": "вул. Разумовська",
+ "tag_uk": [{"tag_id": "1-этаж", "tag_synonym": "Перший поверх"},
+            {"tag_id": "Без-риелтора", "tag_synonym": "Без маклера"},
+            {"tag_id": "Кирпич", "tag_synonym": "З цегли"}],
+ "total_square_meters": 24,
+ "type": "bu",
+ "user_id": 4497993,
+ "web_id": "a9bca982191a9aac",
+ "youtube_link": ""}
