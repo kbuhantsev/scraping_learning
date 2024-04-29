@@ -6,6 +6,7 @@ from selenium_stealth import stealth
 from fake_useragent import UserAgent
 
 from seleniumwire import webdriver
+from seleniumwire.utils import decode
 
 import time
 import gzip
@@ -14,7 +15,10 @@ import gzip
 def my_response_interceptor(request, response):
     if request.url.startswith("https://dom.ria.com/realty/data/"):
         # print(request.url, response.body.decode("utf-8"))
-        body = json.loads(gzip.decompress(response.body).decode("utf-8"))
+        # body = json.loads(gzip.decompress(response.body).decode("utf-8"))
+        body = json.loads(
+            decode(response.body, response.headers.get("Content-Encoding", "identity"))
+        )
         pprint(body)
 
 
@@ -43,16 +47,11 @@ def get_page_soup():
         fix_hairline=True,
     )
 
-    url = "https://dom.ria.com/uk/search/?excludeSold=1&category=1&realty_type=2&operation=1&state_id=12&price_cur=1&wo_dupl=1&sort=inspected_sort&period=per_allday&firstIteraction=false&city_ids=12&client=searchV2&limit=20&type=list&ch=226_223,246_244,1437_1436%3A"
+    url = "https://dom.ria.com/uk/search/?excludeSold=1&category=1&realty_type=2&operation=3&state_id=12&price_cur=1&wo_dupl=1&sort=inspected_sort&period=per_allday&firstIteraction=false&city_ids=12&client=searchV2&type=list&limit=20&ch=226_223,246_244,1437_1436%3A"
 
     driver.response_interceptor = my_response_interceptor
 
     driver.get(url)
-
-    # for request in driver.requests:
-    #     if request.response:
-    #         if request.url.startswith("https://dom.ria.com/realty/data/"):
-    #             print(request.url, json.loads(request.response.body))
 
     time.sleep(5)
 
@@ -64,11 +63,5 @@ def get_page_soup():
 
 
 if __name__ == "__main__":
-
-    cities = []
-
-    # realty_type 2 - квартиры, 0 - дома
-    operations = [1, 3]  # operation 1 - продажа, 3 - аренда
-    categories = [1, 4]  # category 1 - квартиры, 4 - дома
 
     get_page_soup()
